@@ -1,0 +1,57 @@
+/* 共通 css */
+:root {
+    --font-color: #000000;
+}
+* {
+    box-sizing: border-box;
+    color: var(--font-color);
+}
+body {
+    font-family: "Hiragino Kaku Gothic ProN";
+    margin: unset;
+}
+img {
+    display: block;
+    width: 100%;
+}
+h2 {
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--font-color);
+}
+div.container {
+    max-width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+    box-sizing: content-box;
+}
+
+/* 狭い画面向けの既定の CSS レイアウト値 */
+main {
+    margin: 100px 0;
+}
+h2 {
+    margin-bottom: 80px;
+}
+div.images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+img:first-of-type {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+}
+
+
+/* 広い画面向けの CSS */
+@media (min-width: 900px) {
+    div.images {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    img:first-of-type {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+}
